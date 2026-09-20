@@ -1,104 +1,976 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Portfolio de Ntagawa David, informaticien et développeur basé à Bukavu, Sud-Kivu, RDC. Développement web, applications mobiles, bases de données, systèmes d'information et innovation numérique.">
+<meta name="keywords" content="Ntagawa David, informaticien, développeur, Bukavu, RDC, Sud-Kivu, développement web, application mobile, PHP, JavaScript, Python, Flutter, MySQL, Firebase">
+<meta name="author" content="Ntagawa David">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Ntagawa David — Informaticien & Développeur">
+<meta property="og:description" content="Portfolio professionnel de Ntagawa David, informaticien et développeur basé à Bukavu, RDC.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://davidntagawa-alt.github.io">
 
-    <title>Ntagawa David | Informaticien & Développeur en RDC</title>
+<title>Ntagawa David | Informaticien & Développeur</title>
 
-    <meta name="description"
-          content="Ntagawa David, informaticien et développeur basé en République démocratique du Congo. Découvrez son portfolio, ses compétences en développement web, mobile, bases de données et systèmes d'information.">
+<style>
+    /* =========================================================
+       RESET & VARIABLES
+    ========================================================= */
 
-    <meta name="author" content="Ntagawa David">
+    :root {
+        --bg: #07111f;
+        --bg-soft: #0b1728;
+        --surface: #0f1e31;
+        --surface-light: #13263d;
+        --border: rgba(255, 255, 255, 0.09);
 
-    <meta name="robots" content="index, follow">
+        --text: #f5f7fb;
+        --text-soft: #aebbc9;
+        --text-muted: #7f90a4;
 
-    <meta name="theme-color" content="#101828">
+        --primary: #38bdf8;
+        --primary-dark: #0ea5e9;
+        --secondary: #6366f1;
 
-    <link rel="canonical"
-          href="https://davidntagawa-alt.github.io/">
+        --success: #22c55e;
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="profile">
-    <meta property="og:title"
-          content="Ntagawa David | Informaticien & Développeur">
-    <meta property="og:description"
-          content="Portfolio professionnel de Ntagawa David, informaticien et développeur en République démocratique du Congo.">
-    <meta property="og:url"
-          content="https://davidntagawa-alt.github.io/">
-    <meta property="og:site_name"
-          content="Ntagawa David">
+        --radius: 18px;
+        --radius-small: 12px;
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title"
-          content="Ntagawa David | Informaticien & Développeur">
-    <meta name="twitter:description"
-          content="Portfolio professionnel de Ntagawa David.">
+        --container: 1180px;
 
-    <!-- Données structurées pour Google -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Ntagawa David",
-        "url": "https://davidntagawa-alt.github.io/",
-        "jobTitle": "Informaticien et Développeur",
-        "description": "Informaticien et développeur spécialisé dans les solutions numériques, le développement web et mobile, les bases de données et les systèmes d'information.",
-        "email": "mailto:davintagawa@gmail.com",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Bukavu",
-            "addressRegion": "Sud-Kivu",
-            "addressCountry": "CD"
-        },
-        "knowsAbout": [
-            "Développement web",
-            "Développement mobile",
-            "Bases de données",
-            "Systèmes d'information",
-            "PHP",
-            "JavaScript",
-            "Python",
-            "Flutter",
-            "Dart",
-            "MySQL",
-            "Microsoft Access",
-            "Firebase"
-        ]
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
     }
-    </script>
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-<body>
+    html {
+        scroll-behavior: smooth;
+    }
 
-<header class="header">
-    <div class="container nav-container">
+    body {
+        font-family:
+            Inter,
+            ui-sans-serif,
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
 
-        <a href="#accueil" class="logo" aria-label="Accueil Ntagawa David">
+        background:
+            radial-gradient(
+                circle at top right,
+                rgba(56, 189, 248, 0.08),
+                transparent 30%
+            ),
+            var(--bg);
+
+        color: var(--text);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    button,
+    input,
+    textarea {
+        font: inherit;
+    }
+
+    .container {
+        width: min(92%, var(--container));
+        margin: auto;
+    }
+
+    .section {
+        padding: 110px 0;
+    }
+
+    .section-header {
+        max-width: 720px;
+        margin-bottom: 55px;
+    }
+
+    .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+
+        color: var(--primary);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+
+        margin-bottom: 16px;
+    }
+
+    .eyebrow::before {
+        content: "";
+        width: 28px;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 20px;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+        margin-bottom: 18px;
+    }
+
+    .section-description {
+        color: var(--text-soft);
+        font-size: 1.05rem;
+    }
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+
+        background: rgba(7, 17, 31, 0.78);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+        min-height: 78px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+    }
+
+    .logo span {
+        color: var(--primary);
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: var(--text-soft);
+        font-size: 0.92rem;
+        font-weight: 600;
+        transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+
+    .menu-toggle {
+        display: none;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text);
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+
+        padding-top: 120px;
+        position: relative;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        width: 480px;
+        height: 480px;
+        right: -220px;
+        top: 120px;
+
+        background: rgba(56, 189, 248, 0.08);
+        filter: blur(80px);
+        border-radius: 50%;
+
+        pointer-events: none;
+    }
+
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 70px;
+        align-items: center;
+    }
+
+    .availability {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+
+        color: #b9f8cd;
+        background: rgba(34, 197, 94, 0.08);
+        border: 1px solid rgba(34, 197, 94, 0.2);
+
+        padding: 8px 13px;
+        border-radius: 999px;
+
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.07em;
+    }
+
+    .availability-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--success);
+        box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.1);
+    }
+
+    .hero-kicker {
+        margin-top: 28px;
+        color: var(--primary);
+        font-size: 0.9rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+    }
+
+    .hero h1 {
+        font-size: clamp(3.1rem, 7vw, 6.6rem);
+        line-height: 0.95;
+        letter-spacing: -0.065em;
+        margin: 18px 0 28px;
+    }
+
+    .hero h1 span {
+        color: transparent;
+        background: linear-gradient(
+            120deg,
+            var(--primary),
+            #818cf8
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    .hero-description {
+        max-width: 680px;
+        color: var(--text-soft);
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 35px;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        padding: 13px 20px;
+        border-radius: 12px;
+
+        font-weight: 800;
+        font-size: 0.92rem;
+
+        transition: 0.25s ease;
+    }
+
+    .btn-primary {
+        color: #04111d;
+        background: var(--primary);
+    }
+
+    .btn-primary:hover {
+        background: #7dd3fc;
+        transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+        color: var(--text);
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover {
+        border-color: rgba(56,189,248,0.45);
+        transform: translateY(-2px);
+    }
+
+    .hero-card {
+        position: relative;
+    }
+
+    .profile-card {
+        min-height: 480px;
+
+        border: 1px solid var(--border);
+        background:
+            linear-gradient(
+                145deg,
+                rgba(19, 38, 61, 0.95),
+                rgba(9, 22, 38, 0.95)
+            );
+
+        border-radius: 28px;
+        padding: 28px;
+
+        box-shadow: var(--shadow);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        overflow: hidden;
+    }
+
+    .profile-photo {
+        position: absolute;
+        inset: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: var(--text-muted);
+        font-weight: 800;
+        text-align: center;
+        background:
+            radial-gradient(
+                circle at center,
+                rgba(56,189,248,0.14),
+                transparent 45%
+            );
+    }
+
+    .profile-photo span {
+        border: 1px dashed rgba(255,255,255,0.18);
+        padding: 16px 20px;
+        border-radius: 12px;
+        background: rgba(7,17,31,0.5);
+    }
+
+    .profile-info {
+        position: relative;
+        z-index: 2;
+
+        padding: 22px;
+        border-radius: 18px;
+        background: rgba(7,17,31,0.82);
+        backdrop-filter: blur(14px);
+        border: 1px solid var(--border);
+    }
+
+    .profile-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .profile-info p {
+        color: var(--text-soft);
+    }
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about {
+        background: var(--bg-soft);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: start;
+    }
+
+    .about-text p {
+        color: var(--text-soft);
+        font-size: 1.05rem;
+        margin-bottom: 20px;
+    }
+
+    .facts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .fact {
+        padding: 22px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-small);
+        background: rgba(255,255,255,0.025);
+    }
+
+    .fact small {
+        display: block;
+        color: var(--text-muted);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 5px;
+    }
+
+    .fact strong {
+        font-size: 0.98rem;
+    }
+
+    /* =========================================================
+       EXPERTISE
+    ========================================================= */
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .skill-card {
+        padding: 30px;
+
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+
+        transition: 0.3s ease;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(56,189,248,0.35);
+        box-shadow: var(--shadow);
+    }
+
+    .skill-number {
+        color: var(--primary);
+        font-size: 0.8rem;
+        font-weight: 900;
+        margin-bottom: 22px;
+    }
+
+    .skill-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+    }
+
+    .skill-card p {
+        color: var(--text-soft);
+        font-size: 0.94rem;
+    }
+
+    /* =========================================================
+       TECHNOLOGIES
+    ========================================================= */
+
+    .tech-section {
+        background: var(--bg-soft);
+    }
+
+    .tech-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .tech {
+        padding: 12px 17px;
+        border-radius: 999px;
+
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.025);
+
+        color: var(--text-soft);
+        font-size: 0.9rem;
+        font-weight: 700;
+
+        transition: 0.25s ease;
+    }
+
+    .tech:hover {
+        color: var(--primary);
+        border-color: rgba(56,189,248,0.35);
+        transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       PROJECTS
+    ========================================================= */
+
+    .project-intro {
+        color: var(--text-soft);
+        max-width: 800px;
+        margin-bottom: 40px;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .project-card {
+        padding: 34px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(19,38,61,0.8),
+                rgba(15,30,49,0.65)
+            );
+
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    .project-card::after {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        right: -80px;
+        top: -80px;
+
+        border-radius: 50%;
+        background: rgba(56,189,248,0.07);
+    }
+
+    .project-number {
+        color: var(--primary);
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+    }
+
+    .project-card h3 {
+        margin: 20px 0 10px;
+        font-size: 1.45rem;
+    }
+
+    .project-card p {
+        color: var(--text-soft);
+    }
+
+    /* =========================================================
+       PROCESS
+    ========================================================= */
+
+    .process {
+        background: var(--bg-soft);
+    }
+
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+    }
+
+    .process-step {
+        padding: 25px 20px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-small);
+        background: rgba(255,255,255,0.025);
+    }
+
+    .process-step span {
+        color: var(--primary);
+        font-size: 0.8rem;
+        font-weight: 900;
+    }
+
+    .process-step h3 {
+        margin: 12px 0 8px;
+        font-size: 1.05rem;
+    }
+
+    .process-step p {
+        color: var(--text-soft);
+        font-size: 0.88rem;
+    }
+
+    /* =========================================================
+       JOURNEY
+    ========================================================= */
+
+    .journey-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+    }
+
+    .journey-card {
+        padding: 32px;
+
+        border: 1px solid var(--border);
+        background: var(--surface);
+        border-radius: var(--radius);
+    }
+
+    .journey-label {
+        color: var(--primary);
+        font-size: 0.8rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    .journey-card h3 {
+        margin: 12px 0 8px;
+        font-size: 1.3rem;
+    }
+
+    .journey-card p {
+        color: var(--text-soft);
+    }
+
+    /* =========================================================
+       VISION
+    ========================================================= */
+
+    .vision {
+        text-align: center;
+    }
+
+    .vision-box {
+        padding: 70px 40px;
+
+        border-radius: 28px;
+        border: 1px solid rgba(56,189,248,0.18);
+
+        background:
+            radial-gradient(
+                circle at center,
+                rgba(56,189,248,0.1),
+                transparent 55%
+            ),
+            var(--surface);
+    }
+
+    .vision-box h2 {
+        max-width: 820px;
+        margin: 0 auto 20px;
+
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+    }
+
+    .vision-box p {
+        max-width: 750px;
+        margin: auto;
+
+        color: var(--text-soft);
+        font-size: 1.05rem;
+    }
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact {
+        background: var(--bg-soft);
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 0.8fr;
+        gap: 60px;
+        align-items: start;
+    }
+
+    .contact-text p {
+        color: var(--text-soft);
+        font-size: 1.05rem;
+        max-width: 600px;
+    }
+
+    .contact-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        padding: 17px;
+
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.025);
+        border-radius: 12px;
+    }
+
+    .contact-icon {
+        width: 42px;
+        height: 42px;
+
+        display: grid;
+        place-items: center;
+
+        color: var(--primary);
+        background: rgba(56,189,248,0.08);
+        border-radius: 10px;
+
+        font-weight: 900;
+    }
+
+    .contact-item small {
+        display: block;
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    .contact-item strong {
+        display: block;
+        margin-top: 2px;
+        word-break: break-word;
+    }
+
+    .contact-card {
+        padding: 32px;
+
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--surface);
+    }
+
+    .contact-card h3 {
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+    }
+
+    .contact-card p {
+        color: var(--text-soft);
+        margin-bottom: 24px;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+        padding: 30px 0;
+        border-top: 1px solid var(--border);
+    }
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .footer-content p {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+    }
+
+    .footer-brand {
+        font-weight: 900;
+        letter-spacing: 0.08em;
+    }
+
+    .footer-brand span {
+        color: var(--primary);
+    }
+
+    /* =========================================================
+       ANIMATION
+    ========================================================= */
+
+    .reveal {
+        animation: reveal 0.8s ease both;
+    }
+
+    @keyframes reveal {
+        from {
+            opacity: 0;
+            transform: translateY(18px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 950px) {
+
+        .hero-grid,
+        .about-grid,
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-card {
+            max-width: 650px;
+        }
+
+        .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .process-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 700px) {
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 78px;
+            left: 4%;
+            right: 4%;
+
+            display: none;
+            flex-direction: column;
+            align-items: stretch;
+
+            padding: 18px;
+
+            background: rgba(11,23,40,0.98);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 10px;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+
+        .hero {
+            padding-top: 110px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 15vw, 5rem);
+        }
+
+        .profile-card {
+            min-height: 390px;
+        }
+
+        .skills-grid,
+        .projects-grid,
+        .journey-grid,
+        .facts {
+            grid-template-columns: 1fr;
+        }
+
+        .process-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .vision-box {
+            padding: 50px 24px;
+        }
+
+        .footer-content {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>
+
+</head><body><!-- =========================================================
+     NAVIGATION
+========================================================== -->
+
+<header>
+    <div class="container nav">
+
+        <a href="#accueil" class="logo">
             NTAGAWA<span>.</span>
         </a>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#parcours">Parcours</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
         <button
             class="menu-toggle"
             id="menuToggle"
             aria-label="Ouvrir le menu"
-            aria-expanded="false">
+            type="button">
             ☰
         </button>
-
-        <nav class="nav" id="mainNav" aria-label="Navigation principale">
-            <a href="#accueil">Accueil</a>
-            <a href="#apropos">À propos</a>
-            <a href="#expertise">Expertise</a>
-            <a href="#technologies">Technologies</a>
-            <a href="#projets">Projets</a>
-            <a href="#parcours">Parcours</a>
-            <a href="#contact">Contact</a>
-        </nav>
 
     </div>
 </header>
@@ -106,652 +978,742 @@
 
 <main>
 
-<!-- ACCUEIL -->
-<section id="accueil" class="hero">
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-    <div class="container hero-grid">
+    <section class="hero" id="accueil">
 
-        <div class="hero-content">
+        <div class="container hero-grid">
 
-            <div class="status">
-                <span></span>
-                DISPONIBLE POUR DE NOUVEAUX PROJETS
-            </div>
+            <div class="reveal">
 
-            <p class="hero-label">
-                INFORMATICIEN • DÉVELOPPEUR • INNOVATION
-            </p>
-
-            <h1>
-                Ntagawa <span>David</span>
-            </h1>
-
-            <p class="hero-description">
-                Informaticien et développeur passionné par la création
-                de solutions numériques modernes, utiles et adaptées
-                aux besoins des organisations et des entreprises.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#projets" class="btn btn-primary">
-                    Découvrir mes projets
-                </a>
-
-                <a href="#contact" class="btn btn-secondary">
-                    Me contacter
-                </a>
-
-            </div>
-
-            <div class="hero-meta">
-
-                <div>
-                    <strong>RDC</strong>
-                    <span>Bukavu • Sud-Kivu</span>
+                <div class="availability">
+                    <span class="availability-dot"></span>
+                    DISPONIBLE POUR DE NOUVEAUX PROJETS
                 </div>
 
-                <div>
-                    <strong>IT</strong>
-                    <span>Web • Mobile • Data</span>
+                <div class="hero-kicker">
+                    Informaticien • Développeur • Innovation
                 </div>
 
-            </div>
+                <h1>
+                    Ntagawa<br>
+                    <span>David.</span>
+                </h1>
 
-        </div>
-
-
-        <div class="hero-photo">
-
-            <div class="photo-placeholder">
-                <span>MA PHOTO</span>
-                <small>
-                    Photo professionnelle
-                </small>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- APPROCHE -->
-<section class="intro-section">
-
-    <div class="container">
-
-        <p class="section-label">
-            MON APPROCHE
-        </p>
-
-        <h2>
-            Transformer les problèmes
-            <br>
-            <span>en solutions.</span>
-        </h2>
-
-        <p>
-            J'utilise la technologie pour analyser les besoins,
-            simplifier les processus et construire des outils
-            numériques capables de produire un impact concret.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- À PROPOS -->
-<section id="apropos" class="section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <p class="section-label">
-                À PROPOS DE MOI
-            </p>
-
-            <h2>
-                Ntagawa David
-            </h2>
-
-        </div>
-
-
-        <div class="about-grid">
-
-            <div>
-
-                <h3>
-                    Informaticien & Développeur
-                </h3>
-
-                <p>
-                    Je suis Ntagawa David, informaticien et développeur
-                    basé à Bukavu, dans la province du Sud-Kivu,
-                    en République démocratique du Congo.
+                <p class="hero-description">
+                    Informaticien et développeur passionné par la création
+                    de solutions numériques modernes, utiles et adaptées
+                    aux besoins des organisations, entreprises et
+                    utilisateurs.
                 </p>
 
-                <p>
-                    Je m'intéresse particulièrement au développement
-                    de solutions web et mobiles, aux bases de données,
-                    aux systèmes d'information et à l'innovation
-                    technologique.
-                </p>
+                <div class="hero-actions">
+                    <a href="#projets" class="btn btn-primary">
+                        Découvrir mes projets →
+                    </a>
 
-                <p>
-                    Mon objectif est de transformer des besoins réels
-                    en solutions simples, fiables et accessibles.
-                </p>
+                    <a href="#contact" class="btn btn-secondary">
+                        Me contacter
+                    </a>
+                </div>
 
             </div>
 
 
-            <div class="about-details">
+            <div class="hero-card reveal">
 
-                <div class="detail-box">
-                    <strong>Nom</strong>
-                    <span>Ntagawa David</span>
-                </div>
+                <div class="profile-card">
 
-                <div class="detail-box">
-                    <strong>Localisation</strong>
-                    <span>Bukavu, Sud-Kivu, RDC</span>
-                </div>
+                    <!--
+                        Pour ajouter votre vraie photo :
+                        remplacez ce bloc par :
 
-                <div class="detail-box">
-                    <strong>Domaine</strong>
-                    <span>Informatique & Développement</span>
-                </div>
+                        <img
+                            src="images/photo.jpg"
+                            alt="Ntagawa David"
+                            class="profile-photo"
+                        >
+                    -->
 
-                <div class="detail-box">
-                    <strong>Spécialités</strong>
-                    <span>Web • Mobile • Data</span>
+                    <div class="profile-photo">
+                        <span>Votre photo professionnelle</span>
+                    </div>
+
+                    <div class="profile-info">
+                        <h3>Ntagawa David</h3>
+                        <p>Informaticien & Développeur</p>
+
+                        <p style="margin-top:10px;">
+                            📍 Bukavu • Sud-Kivu • RDC
+                        </p>
+                    </div>
+
                 </div>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
 
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
 
-<!-- EXPERTISE -->
-<section id="expertise" class="section section-alt">
+    <section class="section about" id="apropos">
 
-    <div class="container">
+        <div class="container">
 
-        <div class="section-heading">
+            <div class="section-header">
+                <div class="eyebrow">À propos de moi</div>
 
-            <p class="section-label">
-                EXPERTISE
-            </p>
+                <h2 class="section-title">
+                    Transformer les problèmes
+                    en solutions.
+                </h2>
 
-            <h2>
-                Mes domaines de compétence
-            </h2>
-
-        </div>
-
-
-        <div class="cards-grid">
-
-            <article class="card">
-                <h3>Développement Web</h3>
-                <p>
-                    Création de sites et applications web
-                    modernes, responsives et adaptées
-                    aux besoins des utilisateurs.
-                </p>
-            </article>
-
-
-            <article class="card">
-                <h3>Applications Mobiles</h3>
-                <p>
-                    Développement d'applications Android
-                    et de solutions mobiles adaptées
-                    aux besoins locaux.
-                </p>
-            </article>
-
-
-            <article class="card">
-                <h3>Bases de données</h3>
-                <p>
-                    Conception, organisation et gestion
-                    de bases de données pour les applications
-                    et systèmes d'information.
-                </p>
-            </article>
-
-
-            <article class="card">
-                <h3>Systèmes d'information</h3>
-                <p>
-                    Analyse et développement de solutions
-                    permettant d'améliorer la gestion
-                    des informations.
-                </p>
-            </article>
-
-
-            <article class="card">
-                <h3>Automatisation</h3>
-                <p>
-                    Automatisation de tâches et création
-                    d'outils destinés à améliorer
-                    les processus de travail.
-                </p>
-            </article>
-
-
-            <article class="card">
-                <h3>Innovation numérique</h3>
-                <p>
-                    Recherche de solutions technologiques
-                    simples et accessibles pour répondre
-                    aux défis réels.
-                </p>
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- TECHNOLOGIES -->
-<section id="technologies" class="section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <p class="section-label">
-                TECHNOLOGIES
-            </p>
-
-            <h2>
-                Technologies que j'utilise
-            </h2>
-
-        </div>
-
-
-        <div class="technology-list">
-
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>JavaScript</span>
-            <span>PHP</span>
-            <span>SQL</span>
-            <span>MySQL</span>
-            <span>Python</span>
-            <span>Flutter</span>
-            <span>Dart</span>
-            <span>Firebase</span>
-            <span>Microsoft Access</span>
-            <span>Git</span>
-            <span>GitHub</span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PROJETS -->
-<section id="projets" class="section section-alt">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <p class="section-label">
-                PROJETS
-            </p>
-
-            <h2>
-                Quelques domaines de réalisation
-            </h2>
-
-            <p>
-                Une partie de mes réalisations professionnelles
-                ne peut pas être détaillée publiquement pour des
-                raisons de confidentialité.
-            </p>
-
-        </div>
-
-
-        <div class="projects-grid">
-
-            <article class="project-card">
-
-                <span>01</span>
-
-                <h3>
-                    Solutions de gestion
-                </h3>
-
-                <p>
-                    Développement d'outils numériques destinés
-                    à faciliter la gestion et le suivi des activités.
-                </p>
-
-            </article>
-
-
-            <article class="project-card">
-
-                <span>02</span>
-
-                <h3>
-                    Applications Android
-                </h3>
-
-                <p>
-                    Création d'applications mobiles permettant
-                    d'accéder facilement aux services et aux données.
-                </p>
-
-            </article>
-
-
-            <article class="project-card">
-
-                <span>03</span>
-
-                <h3>
-                    Gestion des données
-                </h3>
-
-                <p>
-                    Conception de solutions pour organiser,
-                    rechercher et exploiter efficacement
-                    les données.
-                </p>
-
-            </article>
-
-
-            <article class="project-card">
-
-                <span>04</span>
-
-                <h3>
-                    Expérimentation technologique
-                </h3>
-
-                <p>
-                    Exploration de nouvelles technologies
-                    pour créer des solutions adaptées
-                    aux réalités africaines.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PROCESSUS -->
-<section class="section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <p class="section-label">
-                MA MÉTHODE
-            </p>
-
-            <h2>
-                De l'idée à la solution
-            </h2>
-
-        </div>
-
-
-        <div class="process-grid">
-
-            <div>
-                <strong>01</strong>
-                <h3>Comprendre</h3>
-                <p>
-                    Identifier clairement le besoin.
+                <p class="section-description">
+                    J'utilise la technologie pour analyser les besoins,
+                    simplifier les processus et construire des outils
+                    numériques capables de produire un impact concret.
                 </p>
             </div>
 
-            <div>
-                <strong>02</strong>
-                <h3>Analyser</h3>
-                <p>
-                    Étudier le problème et les contraintes.
-                </p>
-            </div>
 
-            <div>
-                <strong>03</strong>
-                <h3>Développer</h3>
-                <p>
-                    Construire une solution adaptée.
-                </p>
-            </div>
+            <div class="about-grid">
 
-            <div>
-                <strong>04</strong>
-                <h3>Tester</h3>
-                <p>
-                    Vérifier la qualité et la fiabilité.
-                </p>
-            </div>
+                <div class="about-text">
 
-            <div>
-                <strong>05</strong>
-                <h3>Améliorer</h3>
-                <p>
-                    Faire évoluer la solution dans le temps.
-                </p>
-            </div>
+                    <p>
+                        Je suis <strong>Ntagawa David</strong>,
+                        informaticien et développeur basé à Bukavu,
+                        dans la province du Sud-Kivu, en République
+                        démocratique du Congo.
+                    </p>
 
-        </div>
+                    <p>
+                        Je m'intéresse particulièrement au développement
+                        de solutions web et mobiles, aux bases de données,
+                        aux systèmes d'information et à l'innovation
+                        technologique.
+                    </p>
 
-    </div>
+                    <p>
+                        Mon objectif est de transformer des besoins réels
+                        en solutions simples, fiables et accessibles,
+                        en tenant compte du contexte, des utilisateurs
+                        et des objectifs du projet.
+                    </p>
 
-</section>
+                </div>
 
 
-<!-- PARCOURS -->
-<section id="parcours" class="section section-alt">
+                <div class="facts">
 
-    <div class="container">
+                    <div class="fact">
+                        <small>Nom</small>
+                        <strong>Ntagawa David</strong>
+                    </div>
 
-        <div class="section-heading">
+                    <div class="fact">
+                        <small>Localisation</small>
+                        <strong>Bukavu, Sud-Kivu, RDC</strong>
+                    </div>
 
-            <p class="section-label">
-                PARCOURS
-            </p>
+                    <div class="fact">
+                        <small>Domaine</small>
+                        <strong>Informatique & Développement</strong>
+                    </div>
 
-            <h2>
-                Mon parcours
-            </h2>
+                    <div class="fact">
+                        <small>Spécialités</small>
+                        <strong>Web • Mobile • Data</strong>
+                    </div>
 
-        </div>
-
-
-        <div class="timeline">
-
-            <article>
-
-                <span>FORMATION</span>
-
-                <h3>
-                    Information Technology
-                </h3>
-
-                <p>
-                    Africa Nazarene University — Kenya
-                </p>
-
-            </article>
-
-
-            <article>
-
-                <span>EXPÉRIENCE</span>
-
-                <h3>
-                    Solutions numériques
-                </h3>
-
-                <p>
-                    Expérience dans la conception et le développement
-                    de solutions informatiques répondant à des besoins
-                    professionnels concrets.
-                </p>
-
-            </article>
-
-
-            <article>
-
-                <span>APPRENTISSAGE</span>
-
-                <h3>
-                    Formation continue
-                </h3>
-
-                <p>
-                    Veille technologique et apprentissage continu
-                    des nouvelles technologies.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- VISION -->
-<section class="vision-section">
-
-    <div class="container">
-
-        <p class="section-label">
-            MA VISION
-        </p>
-
-        <h2>
-            La technologie doit créer
-            <span>un impact réel.</span>
-        </h2>
-
-        <p>
-            Je crois au potentiel de la technologie pour contribuer
-            au développement des entreprises, des organisations
-            et des communautés en Afrique.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- CONTACT -->
-<section id="contact" class="section contact-section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <p class="section-label">
-                CONTACT
-            </p>
-
-            <h2>
-                Travaillons ensemble
-            </h2>
-
-            <p>
-                Vous avez une idée, un projet ou un besoin
-                informatique ? Contactez-moi.
-            </p>
-
-        </div>
-
-
-        <div class="contact-grid">
-
-            <a
-                href="mailto:davintagawa@gmail.com"
-                class="contact-item">
-
-                <strong>Email</strong>
-
-                <span>
-                    davintagawa@gmail.com
-                </span>
-
-            </a>
-
-
-            <a
-                href="https://wa.me/250736618871"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-item">
-
-                <strong>WhatsApp</strong>
-
-                <span>
-                    +250 736 618 871
-                </span>
-
-            </a>
-
-
-            <div class="contact-item">
-
-                <strong>Localisation</strong>
-
-                <span>
-                    Bukavu, Sud-Kivu — RDC
-                </span>
+                </div>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+
+    <!-- =====================================================
+         EXPERTISE
+    ====================================================== -->
+
+    <section class="section" id="expertise">
+
+        <div class="container">
+
+            <div class="section-header">
+                <div class="eyebrow">Expertise</div>
+
+                <h2 class="section-title">
+                    Mes domaines de compétence
+                </h2>
+
+                <p class="section-description">
+                    Des compétences orientées vers la conception,
+                    le développement et l'amélioration de solutions
+                    numériques concrètes.
+                </p>
+            </div>
+
+
+            <div class="skills-grid">
+
+                <article class="skill-card">
+                    <div class="skill-number">01</div>
+                    <h3>Développement Web</h3>
+                    <p>
+                        Création de sites et applications web modernes,
+                        responsives et adaptés aux besoins des utilisateurs.
+                    </p>
+                </article>
+
+
+                <article class="skill-card">
+                    <div class="skill-number">02</div>
+                    <h3>Applications Mobiles</h3>
+                    <p>
+                        Développement d'applications Android et de solutions
+                        mobiles adaptées aux besoins des utilisateurs.
+                    </p>
+                </article>
+
+
+                <article class="skill-card">
+                    <div class="skill-number">03</div>
+                    <h3>Bases de données</h3>
+                    <p>
+                        Conception, organisation et gestion de bases de
+                        données pour les applications et systèmes
+                        d'information.
+                    </p>
+                </article>
+
+
+                <article class="skill-card">
+                    <div class="skill-number">04</div>
+                    <h3>Systèmes d'information</h3>
+                    <p>
+                        Analyse et développement de solutions permettant
+                        d'améliorer la gestion et l'exploitation
+                        des informations.
+                    </p>
+                </article>
+
+
+                <article class="skill-card">
+                    <div class="skill-number">05</div>
+                    <h3>Automatisation</h3>
+                    <p>
+                        Création d'outils destinés à réduire les tâches
+                        répétitives et à améliorer les processus de travail.
+                    </p>
+                </article>
+
+
+                <article class="skill-card">
+                    <div class="skill-number">06</div>
+                    <h3>Innovation numérique</h3>
+                    <p>
+                        Recherche de solutions technologiques simples,
+                        accessibles et adaptées aux défis réels.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TECHNOLOGIES
+    ====================================================== -->
+
+    <section class="section tech-section" id="technologies">
+
+        <div class="container">
+
+            <div class="section-header">
+                <div class="eyebrow">Technologies</div>
+
+                <h2 class="section-title">
+                    Technologies que j'utilise
+                </h2>
+
+                <p class="section-description">
+                    Un ensemble d'outils et de technologies utilisés
+                    pour concevoir, développer, gérer et faire évoluer
+                    des solutions numériques.
+                </p>
+            </div>
+
+
+            <div class="tech-grid">
+
+                <span class="tech">HTML5</span>
+                <span class="tech">CSS3</span>
+                <span class="tech">JavaScript</span>
+                <span class="tech">PHP</span>
+                <span class="tech">SQL</span>
+                <span class="tech">MySQL</span>
+                <span class="tech">Python</span>
+                <span class="tech">Flutter</span>
+                <span class="tech">Dart</span>
+                <span class="tech">Firebase</span>
+                <span class="tech">Microsoft Access</span>
+                <span class="tech">Git</span>
+                <span class="tech">GitHub</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJECTS
+    ====================================================== -->
+
+    <section class="section" id="projets">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div class="eyebrow">Projets</div>
+
+                <h2 class="section-title">
+                    Des solutions conçues autour
+                    de besoins réels.
+                </h2>
+
+                <p class="project-intro">
+                    Une partie de mes réalisations professionnelles
+                    ne peut pas être détaillée publiquement pour des
+                    raisons de confidentialité. Je présente ici les
+                    principaux domaines de réalisation.
+                </p>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+
+                    <div class="project-number">01 / SOLUTIONS</div>
+
+                    <h3>Solutions de gestion</h3>
+
+                    <p>
+                        Développement d'outils numériques destinés
+                        à faciliter la gestion, le suivi et
+                        l'organisation des activités.
+                    </p>
+
+                </article>
+
+
+                <article class="project-card">
+
+                    <div class="project-number">02 / MOBILE</div>
+
+                    <h3>Applications Android</h3>
+
+                    <p>
+                        Création d'applications mobiles permettant
+                        d'accéder facilement aux services,
+                        fonctionnalités et données.
+                    </p>
+
+                </article>
+
+
+                <article class="project-card">
+
+                    <div class="project-number">03 / DATA</div>
+
+                    <h3>Gestion des données</h3>
+
+                    <p>
+                        Conception de solutions permettant
+                        d'organiser, rechercher et exploiter
+                        efficacement les données.
+                    </p>
+
+                </article>
+
+
+                <article class="project-card">
+
+                    <div class="project-number">04 / INNOVATION</div>
+
+                    <h3>Expérimentation technologique</h3>
+
+                    <p>
+                        Exploration de nouvelles technologies
+                        pour créer des solutions adaptées
+                        aux réalités locales et africaines.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROCESS
+    ====================================================== -->
+
+    <section class="section process">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div class="eyebrow">Ma méthode</div>
+
+                <h2 class="section-title">
+                    De l'idée à la solution.
+                </h2>
+
+                <p class="section-description">
+                    Une démarche structurée pour comprendre le problème,
+                    construire une solution et l'améliorer dans le temps.
+                </p>
+
+            </div>
+
+
+            <div class="process-grid">
+
+                <div class="process-step">
+                    <span>01</span>
+                    <h3>Comprendre</h3>
+                    <p>
+                        Identifier clairement le besoin et les objectifs.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <span>02</span>
+                    <h3>Analyser</h3>
+                    <p>
+                        Étudier le problème, les contraintes et le contexte.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <span>03</span>
+                    <h3>Développer</h3>
+                    <p>
+                        Construire une solution adaptée au besoin.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <span>04</span>
+                    <h3>Tester</h3>
+                    <p>
+                        Vérifier la qualité, le fonctionnement et la fiabilité.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <span>05</span>
+                    <h3>Améliorer</h3>
+                    <p>
+                        Faire évoluer la solution au fil des besoins.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         JOURNEY
+    ====================================================== -->
+
+    <section class="section" id="parcours">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div class="eyebrow">Parcours</div>
+
+                <h2 class="section-title">
+                    Formation, expérience et apprentissage continu.
+                </h2>
+
+            </div>
+
+
+            <div class="journey-grid">
+
+                <article class="journey-card">
+
+                    <div class="journey-label">
+                        Formation
+                    </div>
+
+                    <h3>Information Technology</h3>
+
+                    <p>
+                        <strong>Africa Nazarene University — Kenya</strong>
+                    </p>
+
+                    <p style="margin-top:12px;">
+                        Formation dans le domaine des technologies
+                        de l'information.
+                    </p>
+
+                </article>
+
+
+                <article class="journey-card">
+
+                    <div class="journey-label">
+                        Expérience
+                    </div>
+
+                    <h3>Solutions numériques</h3>
+
+                    <p>
+                        Expérience dans la conception et le développement
+                        de solutions informatiques répondant à des besoins
+                        professionnels concrets.
+                    </p>
+
+                </article>
+
+
+                <article class="journey-card">
+
+                    <div class="journey-label">
+                        Apprentissage
+                    </div>
+
+                    <h3>Formation continue</h3>
+
+                    <p>
+                        Veille technologique, pratique et apprentissage
+                        continu de nouvelles technologies et méthodes
+                        de développement.
+                    </p>
+
+                </article>
+
+
+                <article class="journey-card">
+
+                    <div class="journey-label">
+                        Orientation
+                    </div>
+
+                    <h3>Innovation numérique</h3>
+
+                    <p>
+                        Recherche de solutions technologiques capables
+                        de répondre à des problèmes concrets dans les
+                        entreprises, organisations et communautés.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VISION
+    ====================================================== -->
+
+    <section class="section vision">
+
+        <div class="container">
+
+            <div class="vision-box">
+
+                <div class="eyebrow">
+                    Ma vision
+                </div>
+
+                <h2>
+                    La technologie doit créer
+                    un impact réel.
+                </h2>
+
+                <p>
+                    Je crois au potentiel de la technologie pour contribuer
+                    au développement des entreprises, des organisations
+                    et des communautés en Afrique.
+                    Mon objectif est de participer à la création de
+                    solutions numériques utiles, accessibles et adaptées
+                    aux réalités locales.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section class="section contact" id="contact">
+
+        <div class="container">
+
+            <div class="contact-grid">
+
+                <div class="contact-text">
+
+                    <div class="eyebrow">
+                        Contact
+                    </div>
+
+                    <h2 class="section-title">
+                        Travaillons ensemble.
+                    </h2>
+
+                    <p>
+                        Vous avez une idée, un projet ou un besoin
+                        informatique ? Contactez-moi pour échanger
+                        autour de votre besoin et explorer les
+                        possibilités de collaboration.
+                    </p>
+
+
+                    <div class="contact-list">
+
+                        <a
+                            href="mailto:davintagawa@gmail.com"
+                            class="contact-item">
+
+                            <span class="contact-icon">
+                                @
+                            </span>
+
+                            <span>
+                                <small>Email</small>
+                                <strong>
+                                    davintagawa@gmail.com
+                                </strong>
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="https://wa.me/250736618871"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-item">
+
+                            <span class="contact-icon">
+                                W
+                            </span>
+
+                            <span>
+                                <small>WhatsApp</small>
+                                <strong>
+                                    +250 736 618 871
+                                </strong>
+                            </span>
+
+                        </a>
+
+
+                        <div class="contact-item">
+
+                            <span class="contact-icon">
+                                📍
+                            </span>
+
+                            <span>
+                                <small>Localisation</small>
+                                <strong>
+                                    Bukavu, Sud-Kivu — RDC
+                                </strong>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <h3>
+                        Un projet en tête ?
+                    </h3>
+
+                    <p>
+                        Présentez-moi votre besoin, votre idée ou
+                        votre problématique. Une première discussion
+                        permet souvent de mieux définir la solution
+                        à construire.
+                    </p>
+
+                    <a
+                        href="mailto:davintagawa@gmail.com?subject=Projet%20informatique"
+                        class="btn btn-primary">
+                        Démarrer une discussion →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 </main>
 
 
-<!-- FOOTER -->
-<footer class="footer">
+<!-- =========================================================
+     FOOTER
+========================================================== -->
 
-    <div class="container">
+<footer>
+
+    <div class="container footer-content">
+
+        <div class="footer-brand">
+            NTAGAWA<span>.</span>
+        </div>
 
         <p>
-            © <span id="year"></span>
-            Ntagawa David. Tous droits réservés.
+            © 2026 Ntagawa David. Tous droits réservés.
         </p>
 
         <p>
@@ -763,46 +1725,40 @@
 </footer>
 
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
 <script>
 
     const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
+    const navLinks = document.getElementById("navLinks");
 
-    if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
 
-        menuToggle.addEventListener("click", function () {
 
-            const isOpen =
-                mainNav.classList.toggle("active");
+    document.querySelectorAll(".nav-links a").forEach(link => {
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
-
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
         });
 
-
-        mainNav.querySelectorAll("a").forEach(function(link) {
-
-            link.addEventListener("click", function() {
-
-                mainNav.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            });
-
-        });
-
-    }
+    });
 
 
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
+    window.addEventListener("scroll", () => {
+
+        const header = document.querySelector("header");
+
+        if (window.scrollY > 30) {
+            header.style.background = "rgba(7, 17, 31, 0.94)";
+        } else {
+            header.style.background = "rgba(7, 17, 31, 0.78)";
+        }
+
+    });
 
 </script>
 
