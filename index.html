@@ -1,405 +1,458 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="auto">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio professionnel de Ntagawa David, informaticien et développeur basé à Bukavu, Sud-Kivu, RDC.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ntagawa David — Informaticien et développeur à Bukavu</title>
+  <meta name="description" content="Portfolio de Ntagawa David, informaticien et développeur à Bukavu (Sud-Kivu, RDC) : solutions web, applications mobiles, bases de données et systèmes d'information.">
   <meta name="author" content="Ntagawa David">
-  <meta name="theme-color" content="#0b63f6">
-  <meta property="og:title" content="Ntagawa David — Informaticien & Développeur">
-  <meta property="og:description" content="Portfolio professionnel — Web, Mobile, Data et innovation numérique.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f2f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a1620" media="(prefers-color-scheme: dark)">
+
+  <!-- Partage (WhatsApp, LinkedIn, Facebook)
+       TODO après mise en ligne : ajouter <link rel="canonical" href="https://VOTRE-DOMAINE/">
+       et <meta property="og:image" content="https://VOTRE-DOMAINE/ntagawa-david.png"> (URL absolue obligatoire). -->
   <meta property="og:type" content="website">
-  <title>Ntagawa David — Informaticien & Développeur</title>
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Ntagawa David — Informaticien et développeur">
+  <meta property="og:description" content="Solutions web, mobiles et de données pour les organisations et les entreprises. Basé à Bukavu, RDC.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f5bd8'/%3E%3Cpath d='M18 46V18h6l16 20V18h6v28h-6L24 26v20z' fill='%23fff'/%3E%3C/svg%3E">
+
+  <!-- Police variable unique : Bricolage Grotesque (repli sur la police système) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap">
+
+  <!-- Thème appliqué avant le premier rendu : évite le flash clair/sombre -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ntagawa David",
+    "jobTitle": "Informaticien et développeur",
+    "description": "Informaticien et développeur : solutions web, applications mobiles, bases de données et systèmes d'information.",
+    "email": "mailto:davintagawa@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bukavu",
+      "addressRegion": "Sud-Kivu",
+      "addressCountry": "CD"
+    },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Africa Nazarene University" },
+    "knowsAbout": ["Développement web", "Applications mobiles", "Flutter", "Bases de données", "Systèmes d'information", "Automatisation"]
+  }
+  </script>
 </head>
 
 <body>
-<header class="header" id="accueil">
-  <div class="container nav">
-    <a class="logo" href="#accueil" aria-label="Accueil">NTAGAWA<span>.</span></a>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <div id="top-sentinel" aria-hidden="true"></div>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+  <!-- ============ EN-TÊTE ============ -->
+  <header class="site-header" id="top">
+    <div class="wrap site-header__bar">
+      <a class="brand" href="#top" aria-label="Ntagawa David, retour en haut de page">
+        <span class="brand__mark" aria-hidden="true">N</span>
+        <span class="brand__name">Ntagawa David</span>
+      </a>
 
-    <nav id="mainNav" aria-label="Navigation principale">
-      <a href="#accueil">Accueil</a>
-      <a href="#apropos">À propos</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#technologies">Technologies</a>
-      <a href="#projets">Projets</a>
-      <a href="#parcours">Parcours</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+      <nav id="siteNav" class="site-nav" aria-label="Navigation principale" data-open="false">
+        <a href="#apropos">À propos</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#technologies">Technologies</a>
+        <a href="#projets">Projets</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-<main>
-  <section class="hero">
-    <div class="hero-background"></div>
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <div class="status"><span></span> DISPONIBLE POUR DE NOUVEAUX PROJETS</div>
-        <p class="eyebrow">INFORMATICIEN • DÉVELOPPEUR • INNOVATION</p>
-        <h1>Ntagawa <strong>David</strong></h1>
-        <p class="hero-description">
-          Informaticien et développeur passionné par la création de solutions numériques
-          modernes, utiles et adaptées aux besoins des organisations et des entreprises.
-        </p>
-
-        <div class="hero-buttons">
-          <a class="btn primary" href="#projets">Découvrir mes projets</a>
-          <a class="btn outline" href="#contact">Me contacter</a>
-        </div>
-
-        <div class="hero-meta">
-          <div><strong>RDC</strong><span>Bukavu • Sud-Kivu</span></div>
-          <div><strong>IT</strong><span>Web • Mobile • Data</span></div>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="photo-wrapper">
-          <div class="photo-placeholder">
-            <img src="ntagawa-david.png" alt="Portrait professionnel de Ntagawa David">
-          </div>
-          <div class="floating-card card-one">
-            <strong>WEB • MOBILE • DATA</strong>
-            <span>Solutions numériques</span>
-          </div>
-          <div class="floating-card card-two">
-            <strong>RDC</strong>
-            <span>Bukavu, Sud-Kivu</span>
-          </div>
-        </div>
+      <div class="site-header__tools">
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Changer de thème">
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg>
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <a class="btn btn--primary btn--small header-cta" href="#contact">Me contacter</a>
+        <button id="menuBtn" class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="menu-btn__top" d="M4 8h16"/><path class="menu-btn__bottom" d="M4 16h16"/></svg>
+        </button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="intro section">
-    <div class="container intro-grid">
-      <div>
-        <p class="section-label">01 / APPROCHE</p>
-        <h2>Transformer les problèmes <span>en solutions.</span></h2>
-      </div>
-      <p>
-        J'utilise la technologie pour analyser les besoins, simplifier les processus
-        et construire des outils numériques capables de produire un impact concret.
-      </p>
-    </div>
-  </section>
+  <main id="contenu">
 
-  <section class="section about" id="apropos">
-    <div class="container">
-      <div class="section-top">
-        <div>
-          <p class="section-label">02 / À PROPOS</p>
-          <h2>Profil <span>professionnel</span></h2>
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <!-- Courbes de niveau décoratives (relief de la région du lac Kivu) -->
+      <svg class="contours" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <g style="--i:0"><path pathLength="1" d="M144 0Q162 17 174 23Q186 28 198 30Q210 31 222 30Q234 29 246 27Q258 26 270 23Q282 21 294 18Q306 15 318 13Q330 10 341 8Q352 6 365 5Q378 3 390 3Q402 4 414 6Q426 8 438 10Q450 12 462 12Q474 12 486 9L498 7"/><path pathLength="1" d="M1029 0Q1050 15 1062 21Q1074 27 1086 29Q1098 32 1110 31Q1122 31 1134 29Q1146 27 1158 24Q1170 21 1182 18L1194 16"/><path pathLength="1" d="M168 900Q156 881 147 874Q138 867 126 864Q114 862 102 863Q90 865 78 869Q66 872 54 876Q42 879 30 879Q18 880 12 869Q7 858 11 846Q16 834 23 823Q30 811 37 802Q43 792 51 780Q59 768 65 756Q72 745 78 732Q84 720 89 708Q94 696 98 686Q102 675 106 665Q110 654 115 642Q119 630 125 618Q130 606 136 594Q142 582 149 571Q156 559 163 550Q171 540 178 532Q186 524 195 515Q204 506 213 498Q222 489 231 479Q240 469 246 457Q252 445 252 433Q252 421 246 412Q241 402 231 396Q222 391 210 389Q198 388 186 389Q174 391 162 395Q150 399 138 405Q126 411 114 418Q102 425 92 432Q82 438 71 444Q60 450 48 452Q36 454 30 443Q24 432 26 420Q28 408 32 396Q36 384 40 372Q44 360 47 348Q50 336 53 324Q55 312 57 300Q59 288 60 276Q60 264 60 252Q59 240 57 228Q55 216 49 204Q43 192 33 185Q24 177 12 173L0 168"/></g>
+      <g style="--i:1"><path pathLength="1" d="M754 0Q774 10 786 13Q798 16 810 17Q822 19 834 19Q846 18 858 18Q870 17 882 16Q894 15 906 15Q918 15 930 15Q942 16 954 19Q966 21 976 26Q987 30 997 36Q1007 42 1017 48Q1026 54 1038 60Q1050 65 1062 69Q1074 73 1086 76Q1097 78 1110 80Q1122 82 1134 84Q1146 87 1156 95Q1166 102 1171 114Q1176 126 1178 138Q1179 150 1181 162Q1182 174 1183 186Q1184 198 1186 209Q1188 220 1191 231L1194 242"/><path pathLength="1" d="M262 900Q240 885 232 874Q225 864 219 852Q212 840 206 828Q199 816 193 806Q186 796 177 785Q168 775 160 765Q152 756 148 744Q143 732 142 720Q141 708 143 696Q144 684 147 673Q150 662 155 649Q160 636 166 624Q172 612 179 601Q186 590 195 580Q204 570 213 562Q222 554 231 547Q240 541 251 534Q261 528 272 523Q282 517 294 511Q306 504 318 495Q330 486 334 474Q338 462 335 450Q332 438 326 426Q320 414 313 402Q306 390 299 381Q292 372 281 363Q270 355 258 350Q246 345 234 343Q222 341 210 341Q198 340 186 341Q174 341 162 341Q150 340 138 337Q126 333 118 323Q109 312 107 300Q104 288 103 276Q102 264 102 252Q102 240 102 228Q102 216 102 204Q103 192 103 180Q104 168 105 156Q107 144 110 132Q113 120 120 111Q127 102 137 96Q147 90 158 86Q168 82 180 78Q192 74 204 71Q216 68 228 64Q240 61 252 58Q264 56 276 53Q288 51 300 49Q312 48 324 47Q336 47 348 48Q360 49 371 51Q382 54 395 58Q408 62 420 65Q432 67 444 67Q456 67 468 64Q480 62 492 57Q504 52 516 46Q528 39 540 32Q552 25 563 18Q573 12 584 6L594 0"/></g>
+      <g style="--i:2"><path pathLength="1" d="M1200 861Q1176 874 1164 878Q1152 881 1140 882Q1128 883 1116 882Q1104 881 1092 880Q1080 878 1068 877Q1056 875 1044 875Q1032 875 1020 876Q1008 877 996 878Q984 880 972 882Q960 884 948 887Q936 890 924 893L912 896"/><path pathLength="1" d="M429 900Q408 889 396 886Q384 883 372 881Q360 879 348 877Q336 875 324 873Q312 871 300 866Q288 861 279 853Q270 846 264 837Q257 828 252 817Q246 805 241 793Q236 780 232 770Q228 759 224 749Q220 738 216 726Q211 714 209 702Q206 690 206 678Q207 666 210 654Q214 642 221 631Q228 620 237 611Q246 603 258 596Q270 588 282 583Q294 578 306 574Q317 570 330 565Q342 560 354 554Q366 548 376 541Q386 534 394 526Q402 518 409 508Q416 498 420 486Q424 474 424 462Q424 450 419 439Q414 428 405 419Q396 410 387 402Q378 395 369 387Q360 379 351 370Q342 361 333 352Q324 343 315 335Q306 327 294 321Q282 314 270 311Q258 308 246 306Q234 305 222 303Q210 302 198 300Q186 298 174 293Q162 288 155 279Q147 270 144 258Q140 246 139 234Q139 222 140 210Q141 198 144 186Q147 174 151 164Q156 153 164 143Q172 132 182 124Q192 115 204 109Q215 102 228 97Q240 92 252 89Q264 86 276 84Q288 82 300 81Q312 81 324 82Q336 84 347 87Q357 90 368 94Q378 98 390 102Q402 106 414 108Q426 110 438 110Q450 109 462 106Q474 103 486 98Q498 94 510 87Q522 81 534 74Q546 67 557 61Q567 54 577 48Q587 42 599 36Q610 30 623 25Q636 20 648 18Q660 16 672 17Q684 18 696 22Q708 26 720 30Q732 35 744 38Q756 42 768 43Q780 45 792 45Q804 45 816 44Q828 44 840 43Q852 42 864 42Q876 41 888 41Q900 41 912 42Q924 43 936 46Q948 49 960 54Q972 59 983 66Q994 72 1004 78Q1014 83 1026 89Q1038 95 1050 100Q1062 104 1074 108Q1086 112 1098 117Q1110 122 1121 130Q1131 138 1138 150Q1146 162 1149 174Q1153 186 1156 198Q1159 210 1161 222Q1164 234 1167 245Q1170 256 1176 269Q1181 282 1188 292L1194 301"/></g>
+      <g class="major" style="--i:3"><path pathLength="1" d="M1200 816Q1176 832 1164 837Q1152 841 1140 843Q1128 846 1116 846Q1104 847 1092 848Q1080 848 1068 849Q1056 850 1044 852Q1032 853 1020 855Q1008 857 996 859Q984 861 972 863Q960 866 949 868Q938 870 925 873Q912 875 900 877Q888 880 876 881Q864 883 852 884Q840 886 828 886Q816 887 804 887Q792 887 781 888Q769 888 757 889Q744 891 732 893L720 895"/><path pathLength="1" d="M483 900Q463 882 453 876Q444 870 432 864Q420 859 408 857Q396 854 384 852Q372 850 360 847Q348 845 336 841Q324 837 313 829Q302 822 295 813Q288 804 283 792Q277 780 274 768Q271 756 269 744Q267 732 267 720Q267 708 268 697Q270 685 275 673Q280 660 287 651Q294 643 303 635Q312 627 323 619Q333 612 343 606Q352 600 362 594Q371 588 381 581Q390 575 399 568Q408 561 417 552Q426 543 434 533Q443 522 449 510Q456 498 460 486Q464 474 466 462Q468 450 467 438Q467 426 463 414Q459 402 452 393Q445 384 435 377Q426 370 414 362Q402 354 393 347Q384 341 375 332Q366 324 357 315Q349 306 339 298Q330 290 318 284Q306 277 294 274Q282 271 270 270Q258 268 246 267Q234 266 222 262Q210 259 200 253Q191 246 185 234Q180 223 180 211Q180 200 184 187Q188 174 196 163Q204 152 213 144Q222 137 232 131Q242 126 253 122Q264 119 276 118Q288 116 300 118Q312 119 323 122Q333 126 344 131Q354 136 366 142Q378 147 390 150Q402 153 414 153Q426 153 438 150Q450 148 462 145Q474 141 485 136Q497 132 509 126Q522 120 533 114Q545 108 554 103Q564 97 576 91Q588 85 600 79Q612 74 624 71Q636 67 648 67Q660 66 672 67Q684 68 696 70Q708 72 720 72Q732 73 744 73Q756 73 768 72Q780 71 792 69Q804 68 816 67Q828 66 840 64Q852 63 864 63Q876 63 888 63Q900 64 912 66Q924 68 936 73Q948 77 960 83Q972 89 983 96Q994 102 1004 108Q1014 113 1026 119Q1038 124 1050 129Q1062 135 1072 139Q1082 144 1093 152Q1104 159 1112 170Q1120 180 1126 192Q1131 204 1135 216Q1138 228 1141 240Q1144 252 1148 264Q1152 276 1156 288Q1161 300 1169 312Q1176 323 1185 333L1194 342"/></g>
+      <g style="--i:4"><path pathLength="1" d="M1200 761Q1183 780 1173 787Q1164 794 1152 800Q1140 807 1128 811Q1116 815 1104 818Q1092 821 1080 823Q1068 826 1056 829Q1044 831 1032 834Q1020 836 1008 839Q996 841 984 844Q973 846 960 848Q948 851 936 853Q924 855 912 856Q900 858 888 859Q876 860 864 860Q852 860 840 860Q828 859 817 859Q805 858 793 858Q780 857 768 858Q756 859 744 861Q732 863 720 866Q708 869 697 873Q687 876 676 880Q666 883 654 887Q642 891 630 895L618 898"/><path pathLength="1" d="M548 900Q528 891 519 884Q510 877 501 869Q492 861 483 854Q474 846 462 840Q450 834 438 831Q427 828 414 826Q402 824 390 821Q378 819 366 816Q354 812 343 805Q332 798 325 789Q318 781 313 768Q309 756 308 744Q306 732 308 720Q309 708 314 696Q318 684 324 675Q330 665 338 657Q345 648 356 639Q366 630 375 623Q384 616 393 609Q402 602 411 595Q420 588 429 580Q438 572 447 562Q456 552 464 540Q472 528 478 516Q483 504 487 492Q491 480 494 468Q497 456 498 444Q500 432 500 420Q501 408 499 396Q498 384 494 372Q490 360 483 351Q476 342 466 335Q456 327 444 320Q432 312 423 304Q414 297 406 286Q399 276 395 264Q391 252 393 240Q396 229 405 221Q414 213 426 207Q438 201 448 197Q459 192 469 188Q480 183 492 179Q503 174 516 169Q528 164 540 159Q552 154 564 150Q576 145 588 141Q600 136 612 133Q624 129 636 126Q648 123 660 120Q672 118 684 115Q696 112 708 110Q720 107 732 104Q744 101 756 99Q768 96 780 94Q792 91 804 89Q816 87 828 86Q840 84 852 83Q864 83 876 83Q888 84 900 86Q912 89 923 92Q933 96 944 101Q954 106 966 113Q978 120 989 126Q1000 132 1010 137Q1020 142 1032 148Q1044 154 1056 160Q1068 167 1077 174Q1086 181 1093 189Q1100 198 1106 210Q1112 222 1116 234Q1120 246 1124 258Q1127 270 1131 282Q1134 294 1139 306Q1143 318 1150 330Q1157 342 1165 351Q1172 360 1182 369L1192 378"/></g>
+      <g style="--i:5"><path pathLength="1" d="M1200 690Q1189 714 1183 725Q1176 735 1167 746Q1158 756 1149 764Q1140 771 1128 779Q1116 786 1104 791Q1092 797 1080 801Q1068 805 1056 809Q1044 813 1032 816Q1020 819 1008 822Q996 825 984 828Q972 830 960 832Q948 834 936 836Q924 838 912 839Q900 839 888 839Q876 840 864 839Q852 838 840 836Q828 835 816 833Q804 832 792 831Q780 831 768 831Q756 832 744 834Q732 835 720 839Q708 842 696 845Q684 849 672 853Q660 857 649 861Q639 864 625 867Q612 870 600 871Q588 871 576 868Q564 866 553 859Q541 852 532 843Q523 834 513 825Q504 816 494 810Q484 804 473 801Q462 797 450 795Q438 794 426 792Q414 791 403 788Q391 786 379 780Q367 774 359 765Q352 756 349 744Q346 732 348 720Q350 708 355 697Q360 686 367 676Q375 666 384 657Q393 648 403 639Q414 630 423 623Q432 616 441 608Q450 601 459 592Q468 583 475 573Q483 564 490 552Q497 540 502 528Q507 516 511 504Q515 492 517 480Q520 468 522 456Q525 444 526 433Q528 422 530 409Q531 396 532 384Q533 372 534 360Q535 348 536 336Q536 324 537 312Q538 300 540 288Q541 276 547 265Q552 254 561 244Q570 234 579 227Q588 219 597 212Q606 206 615 199Q624 192 636 184Q648 176 659 169Q670 162 680 156Q690 151 702 145Q714 139 726 134Q738 129 750 124Q762 120 774 117Q786 113 798 110Q810 107 822 106Q834 104 846 103Q858 102 870 103Q882 104 894 106Q906 109 918 114Q930 118 942 125Q954 131 965 137Q977 144 988 150Q999 156 1009 161Q1020 167 1032 173Q1044 180 1053 186Q1062 193 1070 201Q1079 210 1085 221Q1092 232 1096 242Q1100 252 1104 264Q1107 276 1111 288Q1114 300 1118 312Q1121 324 1126 336Q1131 348 1139 360Q1146 371 1155 381Q1164 390 1173 399Q1182 407 1190 417L1198 426"/></g>
+      <g style="--i:6"><path pathLength="1" d="M1200 589Q1196 612 1194 624Q1191 636 1188 648Q1184 660 1180 671Q1176 681 1171 692Q1166 702 1159 713Q1152 723 1143 733Q1134 744 1125 751Q1116 759 1104 766Q1092 774 1080 780Q1068 786 1056 791Q1044 795 1032 799Q1020 803 1008 806Q996 810 984 812Q972 815 960 817Q948 819 936 820Q924 821 912 821Q900 822 888 821Q876 820 864 818Q852 816 840 814Q828 812 816 810Q804 808 792 807Q780 806 768 806Q756 807 744 808Q732 809 720 812Q708 814 696 817Q684 820 672 823Q660 826 648 829Q636 831 624 831Q612 832 600 828Q588 825 579 817Q571 810 564 800Q558 791 552 779Q546 768 540 759Q534 750 522 744Q510 738 498 739Q486 740 474 741Q462 743 450 743Q438 743 426 739Q414 735 409 725Q403 714 408 702Q412 690 419 682Q426 673 435 665Q444 657 453 651Q462 644 471 637Q480 630 489 622Q498 614 505 604Q512 594 517 583Q522 573 526 559Q530 546 533 534Q535 522 538 510Q540 498 542 486Q544 474 546 462Q548 450 550 438Q552 426 554 414Q556 402 558 390Q561 378 564 366Q567 354 570 342Q574 330 579 318Q584 306 590 294Q597 282 604 271Q612 260 620 250Q628 240 637 231Q645 222 655 213Q664 204 674 196Q684 188 693 181Q702 174 712 168Q721 162 732 156Q744 150 756 145Q768 139 778 136Q789 132 801 129Q812 126 823 124Q834 123 846 122Q858 122 870 123Q882 124 894 128Q906 131 918 136Q930 142 942 148Q954 155 965 162Q977 168 988 174Q999 180 1009 186Q1020 192 1030 198Q1039 204 1048 211Q1056 219 1064 229Q1072 240 1077 252Q1082 264 1086 276Q1090 288 1093 300Q1096 312 1099 324Q1102 336 1106 348Q1110 360 1116 371Q1122 383 1129 393Q1137 402 1146 411Q1155 420 1163 429Q1172 438 1179 447Q1185 456 1190 468L1196 480"/></g>
+      <g class="major" style="--i:7"><path pathLength="1" d="M829 143Q840 141 852 142Q864 142 876 144Q888 147 900 151Q912 156 923 162Q935 168 944 174Q954 179 965 186Q977 192 988 198Q998 204 1008 210Q1017 216 1028 225Q1038 233 1045 243Q1053 252 1059 264Q1065 276 1068 288Q1072 300 1075 312Q1077 324 1080 336Q1083 348 1086 360Q1089 372 1094 383Q1098 394 1104 404Q1110 414 1118 423Q1126 432 1136 441Q1145 450 1152 459Q1160 468 1166 480Q1173 492 1176 504Q1179 516 1181 528Q1182 540 1182 552Q1182 564 1181 576Q1180 588 1178 600Q1176 612 1173 624Q1170 636 1166 648Q1162 660 1157 671Q1152 682 1146 692Q1141 702 1134 711Q1127 720 1119 729Q1110 738 1101 745Q1092 752 1080 759Q1068 767 1056 772Q1044 778 1032 783Q1020 787 1008 791Q996 794 984 797Q972 800 960 801Q948 803 936 804Q924 805 912 804Q900 804 888 802Q876 800 864 798Q852 795 840 793Q828 790 816 788Q804 785 792 784Q780 783 768 782Q756 782 744 783Q732 783 720 784Q708 785 696 786Q684 787 672 787Q660 787 649 783Q637 780 629 771Q621 762 618 750Q615 738 615 726Q615 714 615 702Q616 690 616 678Q616 666 616 654Q615 642 612 630Q609 618 605 608Q600 598 594 588Q588 577 582 565Q577 552 574 540Q571 528 570 516Q569 504 569 492Q570 480 570 468Q571 456 573 444Q574 432 576 420Q579 408 581 396Q584 384 588 372Q591 360 596 348Q600 337 606 324Q612 312 618 302Q624 291 631 281Q639 270 646 261Q653 252 661 243Q669 234 678 225Q686 216 697 207Q707 198 717 191Q726 184 738 177Q750 169 762 163Q774 157 786 153Q798 149 808 146Q818 144 829 143Z"/></g>
+      <g style="--i:8"><path pathLength="1" d="M843 162Q855 162 868 165Q882 168 894 172Q906 177 918 184Q930 190 942 197Q954 204 965 210Q975 216 985 222Q995 228 1004 235Q1014 242 1023 252Q1032 262 1038 272Q1043 282 1048 294Q1052 306 1055 318Q1057 330 1059 342Q1061 354 1064 366Q1066 378 1069 390Q1073 402 1078 414Q1084 426 1091 435Q1098 444 1107 453Q1116 462 1125 471Q1133 480 1140 489Q1146 498 1151 510Q1156 522 1158 534Q1161 546 1161 558Q1161 570 1160 582Q1159 594 1157 606Q1155 618 1152 630Q1148 642 1144 653Q1140 663 1135 674Q1129 684 1123 694Q1116 704 1107 714Q1098 724 1089 732Q1080 739 1068 747Q1056 755 1044 761Q1032 767 1020 771Q1008 775 996 779Q984 782 973 784Q961 786 949 787Q936 788 924 787Q912 787 900 785Q888 784 876 781Q864 778 852 775Q840 771 828 768Q816 765 804 763Q792 761 780 760Q768 758 756 757Q744 756 732 755Q720 753 708 751Q696 748 685 740Q673 732 668 720Q663 708 661 696Q659 684 659 672Q658 660 658 648Q657 636 656 624Q655 612 652 600Q650 588 645 576Q640 564 633 552Q625 540 619 529Q612 518 607 505Q602 492 601 480Q599 468 599 456Q598 444 599 432Q601 420 603 408Q605 396 608 384Q612 372 616 360Q621 348 625 338Q630 327 636 317Q642 306 648 297Q654 287 663 276Q671 264 679 255Q687 246 694 238Q702 230 711 222Q720 214 729 207Q738 200 749 193Q759 186 770 181Q780 176 790 172Q801 168 814 165Q828 162 830 162Q832 162 843 162Z"/></g>
+      <g style="--i:9"><path pathLength="1" d="M827 185Q840 184 852 185Q864 187 876 191Q888 195 900 201Q912 207 924 213Q936 220 948 227Q960 234 969 240Q979 246 990 255Q1001 264 1009 273Q1016 282 1022 294Q1028 306 1031 318Q1035 330 1037 342Q1039 354 1040 366Q1042 378 1044 390Q1046 402 1049 414Q1052 426 1057 436Q1062 446 1071 457Q1080 468 1089 477Q1098 485 1107 495Q1116 504 1124 516Q1131 528 1135 540Q1138 552 1139 564Q1140 576 1140 588Q1139 600 1137 612Q1134 624 1130 636Q1127 648 1121 659Q1116 671 1110 680Q1104 690 1097 699Q1089 708 1080 717Q1070 726 1060 733Q1050 740 1038 746Q1026 752 1014 757Q1002 761 990 764Q978 767 966 769Q954 771 942 771Q930 771 918 769Q906 768 894 765Q882 762 871 759Q860 756 847 752Q834 748 822 745Q810 742 798 739Q786 736 775 734Q764 732 753 729Q742 726 731 721Q720 716 711 706Q702 696 698 684Q694 672 692 660Q690 648 689 636Q689 624 688 612Q687 600 685 588Q684 577 681 564Q678 552 673 540Q668 528 661 517Q654 506 648 497Q642 487 637 475Q632 462 630 450Q628 438 628 426Q628 414 630 402Q632 390 635 378Q639 366 643 354Q648 342 654 330Q660 319 666 309Q672 299 680 287Q688 276 696 267Q703 258 712 249Q720 241 729 233Q738 225 747 218Q756 211 768 205Q780 198 792 193Q804 189 809 187Q815 186 827 185Z"/></g>
+      <g style="--i:10"><path pathLength="1" d="M833 210Q846 210 858 213Q870 216 882 221Q894 227 906 233Q918 240 928 246Q939 252 948 258Q958 264 968 272Q978 279 987 290Q996 300 1001 312Q1007 324 1010 336Q1013 348 1015 360Q1016 372 1017 384Q1018 396 1020 408Q1022 420 1025 432Q1028 444 1033 455Q1038 466 1046 476Q1054 486 1064 495Q1074 504 1083 512Q1092 521 1099 530Q1106 540 1111 552Q1116 564 1117 576Q1118 588 1117 600Q1117 612 1114 624Q1111 636 1106 648Q1101 660 1094 672Q1086 684 1079 693Q1071 702 1060 711Q1050 720 1040 726Q1031 732 1019 737Q1008 742 996 746Q984 749 972 751Q960 753 948 753Q936 753 925 752Q914 750 902 747Q890 744 877 740Q864 735 852 731Q840 727 829 723Q817 720 805 716Q792 712 780 708Q768 704 756 697Q745 690 737 681Q730 672 726 660Q721 648 719 636Q717 624 717 612Q716 600 715 588Q715 576 714 564Q713 552 711 540Q709 528 706 517Q702 506 697 496Q692 486 685 475Q678 465 673 454Q667 444 664 432Q661 420 661 408Q660 396 663 384Q665 372 668 361Q672 350 678 337Q684 324 690 314Q696 304 704 293Q712 282 720 273Q727 264 736 256Q744 248 753 241Q762 234 772 228Q782 222 793 218Q804 213 812 212Q819 210 833 210Z"/></g>
+      <g class="major" style="--i:11"><path pathLength="1" d="M810 244Q822 241 834 242Q846 243 858 247Q870 251 882 258Q894 264 905 270Q916 276 926 282Q936 288 945 295Q954 302 963 312Q972 323 977 335Q983 348 985 360Q988 372 989 384Q990 396 991 408Q992 420 994 432Q996 444 999 455Q1002 466 1007 476Q1012 486 1019 495Q1026 503 1035 511Q1044 519 1053 527Q1062 534 1070 543Q1079 552 1085 564Q1091 576 1093 588Q1094 600 1093 612Q1092 624 1088 636Q1085 648 1079 658Q1074 668 1065 679Q1057 690 1047 698Q1038 706 1027 713Q1015 720 1003 725Q990 729 978 732Q966 734 954 734Q942 734 930 732Q918 730 906 726Q894 722 883 718Q872 714 859 709Q846 704 835 700Q823 696 811 691Q798 686 786 679Q774 672 766 663Q758 654 753 642Q748 630 746 618Q745 606 744 594Q743 582 744 570Q744 558 744 546Q744 534 744 522Q744 510 742 498Q741 486 737 474Q733 462 727 450Q720 438 714 427Q708 416 704 403Q701 390 701 378Q702 366 705 355Q708 343 714 331Q720 318 728 306Q736 294 744 285Q753 276 763 267Q774 259 786 252Q798 246 798 246Q799 246 810 244Z"/></g>
+      </svg>
+
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="status"><span class="status__dot" aria-hidden="true"></span>Disponible pour de nouveaux projets</p>
+          <h1 id="hero-title">Ntagawa<br>David</h1>
+          <p class="hero__role">Informaticien et développeur</p>
+          <p class="hero__lead">
+            Je conçois des solutions numériques modernes, utiles et adaptées aux besoins
+            des organisations et des entreprises : web, mobile et données.
+          </p>
+          <div class="actions">
+            <a class="btn btn--primary" href="#projets">Voir mes projets</a>
+            <a class="btn btn--ghost" href="#contact">Me contacter</a>
+          </div>
         </div>
-        <span class="section-number">02</span>
-      </div>
 
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="large-text">
-            <strong>Ntagawa David</strong>, informaticien & développeur basé à
-            Bukavu, Sud-Kivu, en République démocratique du Congo.
+        <figure class="portrait">
+          <div class="portrait__frame">
+            <span class="portrait__initials" aria-hidden="true">ND</span>
+            <img src="ntagawa-david.png" alt="Portrait de Ntagawa David" fetchpriority="high" decoding="async" onerror="this.remove()">
+          </div>
+          <figcaption class="portrait__caption">
+            <span>Bukavu, Sud-Kivu, RDC</span>
+            <span class="portrait__coords">2°30′ S, 28°51′ E</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ À PROPOS ============ -->
+    <section class="section" id="apropos" aria-labelledby="apropos-title">
+      <div class="wrap about">
+        <div class="section-head">
+          <h2 id="apropos-title">Transformer des besoins réels en solutions simples et fiables.</h2>
+        </div>
+
+        <div class="about__body">
+          <p class="lead">
+            Informaticien et développeur basé à Bukavu, dans le Sud-Kivu, je m'intéresse au
+            développement web et mobile, aux bases de données, aux systèmes d'information
+            et à l'innovation technologique.
           </p>
           <p>
-            Je m'intéresse au développement de solutions web et mobiles, aux bases
-            de données, aux systèmes d'information et à l'innovation technologique.
-          </p>
-          <p>
-            Mon objectif est de transformer des besoins réels en solutions simples,
-            fiables, accessibles et utiles.
+            J'utilise la technologie pour analyser les besoins, simplifier les processus et
+            construire des outils capables de produire un impact concret : accessibles, fiables
+            et utiles au quotidien.
           </p>
         </div>
 
-        <div class="about-details">
-          <div class="detail-box"><span>Nom</span><strong>Ntagawa David</strong></div>
-          <div class="detail-box"><span>Localisation</span><strong>Bukavu, Sud-Kivu, RDC</strong></div>
-          <div class="detail-box"><span>Domaine</span><strong>Informatique & Développement</strong></div>
-          <div class="detail-box"><span>Spécialités</span><strong>Web • Mobile • Data</strong></div>
+        <dl class="facts">
+          <div><dt>Nom</dt><dd>Ntagawa David</dd></div>
+          <div><dt>Localisation</dt><dd>Bukavu, Sud-Kivu, RDC</dd></div>
+          <div><dt>Domaine</dt><dd>Informatique et développement</dd></div>
+          <div><dt>Spécialités</dt><dd>Web, mobile, données</dd></div>
+          <div><dt>Formation</dt><dd>Information Technology, Africa Nazarene University (Kenya)</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ EXPERTISE ============ -->
+    <section class="section section--tint" id="expertise" aria-labelledby="expertise-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="expertise-title">Ce que je construis</h2>
+          <p class="section-head__lead">Six domaines d'intervention, du besoin exprimé à la solution en production.</p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section expertise" id="expertise">
-    <div class="container">
-      <div class="section-top">
-        <div>
-          <p class="section-label">03 / EXPERTISE</p>
-          <h2>Ce que je <span>construis</span></h2>
+        <ul class="discipline-list" role="list">
+          <li class="discipline">
+            <h3>Développement web</h3>
+            <p>Sites et applications web modernes, responsives et adaptés aux besoins.</p>
+            <ul class="tags" role="list"><li>Frontend</li><li>Backend</li><li>Responsive</li></ul>
+          </li>
+          <li class="discipline">
+            <h3>Applications mobiles</h3>
+            <p>Conception de solutions mobiles Android et d'expériences numériques pratiques.</p>
+            <ul class="tags" role="list"><li>Android</li><li>Flutter</li><li>Dart</li></ul>
+          </li>
+          <li class="discipline">
+            <h3>Bases de données</h3>
+            <p>Conception, organisation et gestion de données pour des systèmes fiables.</p>
+            <ul class="tags" role="list"><li>SQL</li><li>MySQL</li><li>Données</li></ul>
+          </li>
+          <li class="discipline">
+            <h3>Systèmes d'information</h3>
+            <p>Analyse des besoins et conception d'outils numériques adaptés aux organisations.</p>
+            <ul class="tags" role="list"><li>Analyse</li><li>Processus</li></ul>
+          </li>
+          <li class="discipline">
+            <h3>Automatisation</h3>
+            <p>Simplification des tâches et amélioration des processus grâce au numérique.</p>
+            <ul class="tags" role="list"><li>Workflows</li><li>Productivité</li></ul>
+          </li>
+          <li class="discipline">
+            <h3>Innovation numérique</h3>
+            <p>Exploration de nouvelles approches pour transformer les problèmes en solutions.</p>
+            <ul class="tags" role="list"><li>Innovation</li><li>Prototypage</li></ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ TECHNOLOGIES ============ -->
+    <section class="section" id="technologies" aria-labelledby="tech-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="tech-title">Outils que j'utilise</h2>
+          <p class="section-head__lead">Chaque outil renvoie vers sa documentation officielle, dans un nouvel onglet.</p>
         </div>
-        <span class="section-number">03</span>
-      </div>
 
-      <div class="expertise-grid">
-        <article class="expertise-card">
-          <span class="expertise-number">01</span><div class="icon">⌘</div>
-          <h3>Développement Web</h3>
-          <p>Sites et applications web modernes, responsives et adaptés aux besoins.</p>
-          <div class="tags"><span>Frontend</span><span>Backend</span><span>Responsive</span></div>
-        </article>
-        <article class="expertise-card">
-          <span class="expertise-number">02</span><div class="icon">▣</div>
-          <h3>Applications Mobiles</h3>
-          <p>Conception de solutions mobiles Android et d'expériences numériques pratiques.</p>
-          <div class="tags"><span>Android</span><span>Flutter</span><span>Dart</span></div>
-        </article>
-        <article class="expertise-card">
-          <span class="expertise-number">03</span><div class="icon">◫</div>
-          <h3>Bases de données</h3>
-          <p>Conception, organisation et gestion de données pour des systèmes fiables.</p>
-          <div class="tags"><span>SQL</span><span>MySQL</span><span>Data</span></div>
-        </article>
-        <article class="expertise-card">
-          <span class="expertise-number">04</span><div class="icon">◎</div>
-          <h3>Systèmes d'information</h3>
-          <p>Analyse des besoins et conception d'outils numériques adaptés aux organisations.</p>
-          <div class="tags"><span>Analyse</span><span>Processus</span><span>SI</span></div>
-        </article>
-        <article class="expertise-card">
-          <span class="expertise-number">05</span><div class="icon">↗</div>
-          <h3>Automatisation</h3>
-          <p>Simplification des tâches et amélioration des processus grâce au numérique.</p>
-          <div class="tags"><span>Workflow</span><span>Productivité</span></div>
-        </article>
-        <article class="expertise-card">
-          <span class="expertise-number">06</span><div class="icon">✦</div>
-          <h3>Innovation numérique</h3>
-          <p>Exploration de nouvelles approches pour transformer les problèmes en solutions.</p>
-          <div class="tags"><span>Innovation</span><span>Digital</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section technologies" id="technologies">
-    <div class="container">
-      <div class="tech-intro">
-        <div>
-          <p class="section-label">04 / TECHNOLOGIES</p>
-          <h2>Outils que <span>j'utilise</span></h2>
-        </div>
-        <p>
-          Cliquez sur une technologie pour découvrir sa documentation, sa définition
-          ou des ressources utiles sur Google.
-        </p>
-      </div>
-
-      <div class="technology-cloud">
-        <a class="tech" href="https://www.google.com/search?q=HTML5" target="_blank" rel="noopener">
-          <strong>HTML5</strong><span>Structure du web</span>
-        </a>
-        <a class="tech" href="https://www.google.com/search?q=CSS3" target="_blank" rel="noopener">
-          <strong>CSS3</strong><span>Design web</span>
-        </a>
-        <a class="tech" href="https://www.google.com/search?q=JavaScript" target="_blank" rel="noopener">
-          <strong>JavaScript</strong><span>Web interactif</span>
-        </a>
-        <a class="tech" href="https://www.google.com/search?q=PHP" target="_blank" rel="noopener">
-          <strong>PHP</strong><span>Backend web</span>
-        </a>
-        <a class="tech" href="https://www.google.com/search?q=SQL" target="_blank" rel="noopener">
-          <strong>SQL</strong><span>Bases de données</span>
-        </a>
-        <a class="tech" href="https://www.google.com/search?q=MySQL" target="_blank" rel="noopener">
-          <strong>MySQL</strong><span>Base de données</span>
-        </a>
-        <a class="tech" href="https://www.google.com/search?q=Python+programming" target="_blank" rel="noopener">
-          <strong>Python</strong><span>Programmation</span>
-        </a>
-        <a class="tech" href="https://www.google.com/search?q=Flutter+framework" target="_blank" rel="noopener">
-          <strong>Flutter</strong><span>Mobile & multiplateforme</span>
-        </a>
-        <a class="tech" href="https://www.google.com/search?q=Dart+programming+language" target="_blank" rel="noopener">
-          <strong>Dart</strong><span>Langage Flutter</span>
-        </a>
-        <a class="tech" href="https://www.google.com/search?q=Firebase+Google" target="_blank" rel="noopener">
-          <strong>Firebase</strong><span>Services cloud</span>
-        </a>
-        <a class="tech" href="https://www.google.com/search?q=Microsoft+Access" target="_blank" rel="noopener">
-          <strong>Access</strong><span>Gestion de données</span>
-        </a>
-        <a class="tech" href="https://www.google.com/search?q=Git+version+control" target="_blank" rel="noopener">
-          <strong>Git</strong><span>Versioning</span>
-        </a>
-        <a class="tech" href="https://github.com/" target="_blank" rel="noopener">
-          <strong>GitHub</strong><span>Code & collaboration</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section projects" id="projets">
-    <div class="container">
-      <p class="section-label">05 / PROJETS</p>
-      <div class="section-top">
-        <h2>Des solutions pensées pour <span>le terrain</span></h2>
-        <span class="section-number">05</span>
-      </div>
-      <p class="projects-intro">
-        Certaines réalisations professionnelles ne peuvent pas être détaillées publiquement
-        pour des raisons de confidentialité. Voici les principaux types de solutions développées.
-      </p>
-
-      <div class="project-list">
-        <article class="project-card">
-          <span class="project-index">01</span>
-          <div class="project-content">
-            <span>Gestion</span><h3>Solutions de gestion</h3>
-            <p>Outils numériques destinés à structurer les opérations et faciliter le suivi des activités.</p>
-            <div class="project-tags"><span>Web</span><span>Data</span><span>Processus</span></div>
+        <div class="tech-grid">
+          <div class="tech-group" role="group" aria-labelledby="tech-web">
+            <h3 id="tech-web">Web</h3>
+            <ul role="list">
+              <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer"><span class="tech__name">HTML5</span><span class="tech__desc">Structure des pages</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+              <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS" target="_blank" rel="noopener noreferrer"><span class="tech__name">CSS3</span><span class="tech__desc">Design et mise en page</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+              <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer"><span class="tech__name">JavaScript</span><span class="tech__desc">Interactivité</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+              <li><a href="https://www.php.net/manual/fr/" target="_blank" rel="noopener noreferrer"><span class="tech__name">PHP</span><span class="tech__desc">Backend web</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+            </ul>
           </div>
-          <span class="project-arrow">↗</span>
-        </article>
 
-        <article class="project-card">
-          <span class="project-index">02</span>
-          <div class="project-content">
-            <span>Mobile</span><h3>Applications Android</h3>
+          <div class="tech-group" role="group" aria-labelledby="tech-data">
+            <h3 id="tech-data">Données</h3>
+            <ul role="list">
+              <li><a href="https://fr.wikipedia.org/wiki/Structured_Query_Language" target="_blank" rel="noopener noreferrer"><span class="tech__name">SQL</span><span class="tech__desc">Langage de requêtes</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+              <li><a href="https://dev.mysql.com/doc/" target="_blank" rel="noopener noreferrer"><span class="tech__name">MySQL</span><span class="tech__desc">Base de données</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+              <li><a href="https://www.microsoft.com/fr-fr/microsoft-365/access" target="_blank" rel="noopener noreferrer"><span class="tech__name">Access</span><span class="tech__desc">Gestion de données</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+              <li><a href="https://firebase.google.com/docs" target="_blank" rel="noopener noreferrer"><span class="tech__name">Firebase</span><span class="tech__desc">Services cloud</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+            </ul>
+          </div>
+
+          <div class="tech-group" role="group" aria-labelledby="tech-mobile">
+            <h3 id="tech-mobile">Mobile</h3>
+            <ul role="list">
+              <li><a href="https://docs.flutter.dev/" target="_blank" rel="noopener noreferrer"><span class="tech__name">Flutter</span><span class="tech__desc">Mobile multiplateforme</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+              <li><a href="https://dart.dev/guides" target="_blank" rel="noopener noreferrer"><span class="tech__name">Dart</span><span class="tech__desc">Langage de Flutter</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+            </ul>
+          </div>
+
+          <div class="tech-group" role="group" aria-labelledby="tech-tools">
+            <h3 id="tech-tools">Programmation et outils</h3>
+            <ul role="list">
+              <li><a href="https://docs.python.org/fr/3/" target="_blank" rel="noopener noreferrer"><span class="tech__name">Python</span><span class="tech__desc">Programmation</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+              <li><a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer"><span class="tech__name">Git</span><span class="tech__desc">Gestion de versions</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+              <li><a href="https://docs.github.com/fr" target="_blank" rel="noopener noreferrer"><span class="tech__name">GitHub</span><span class="tech__desc">Code et collaboration</span><span class="visually-hidden">(nouvel onglet)</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJETS ============ -->
+    <section class="section section--tint" id="projets" aria-labelledby="projets-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="projets-title">Des solutions pensées pour le terrain</h2>
+        </div>
+
+        <p class="note">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          <span>Certaines réalisations professionnelles ne peuvent pas être détaillées publiquement pour des raisons de confidentialité. Voici les principaux types de solutions développées.</span>
+        </p>
+
+        <!-- Pour ajouter une étude de cas : dupliquer un <li class="case"> et remplacer le contenu
+             (problème, solution, résultat). -->
+        <ul class="case-list" role="list">
+          <li class="case">
+            <p class="case__kind">Gestion</p>
+            <h3>Solutions de gestion</h3>
+            <p>Outils numériques destinés à structurer les opérations et à faciliter le suivi des activités.</p>
+            <ul class="tags" role="list"><li>Web</li><li>Données</li><li>Processus</li></ul>
+          </li>
+          <li class="case">
+            <p class="case__kind">Mobile</p>
+            <h3>Applications Android</h3>
             <p>Solutions mobiles conçues pour répondre à des besoins pratiques et professionnels.</p>
-            <div class="project-tags"><span>Android</span><span>Flutter</span><span>Dart</span></div>
-          </div>
-          <span class="project-arrow">↗</span>
-        </article>
-
-        <article class="project-card">
-          <span class="project-index">03</span>
-          <div class="project-content">
-            <span>Data</span><h3>Gestion des données</h3>
+            <ul class="tags" role="list"><li>Android</li><li>Flutter</li><li>Dart</li></ul>
+          </li>
+          <li class="case">
+            <p class="case__kind">Données</p>
+            <h3>Gestion des données</h3>
             <p>Organisation, structuration et exploitation de données pour améliorer l'information disponible.</p>
-            <div class="project-tags"><span>SQL</span><span>MySQL</span><span>Data</span></div>
-          </div>
-          <span class="project-arrow">↗</span>
-        </article>
-
-        <article class="project-card">
-          <span class="project-index">04</span>
-          <div class="project-content">
-            <span>R&amp;D</span><h3>Expérimentation technologique</h3>
+            <ul class="tags" role="list"><li>SQL</li><li>MySQL</li></ul>
+          </li>
+          <li class="case">
+            <p class="case__kind">Recherche et développement</p>
+            <h3>Expérimentation technologique</h3>
             <p>Exploration d'outils et de méthodes pour trouver des réponses numériques adaptées.</p>
-            <div class="project-tags"><span>Innovation</span><span>Prototype</span></div>
-          </div>
-          <span class="project-arrow">↗</span>
-        </article>
+            <ul class="tags" role="list"><li>Innovation</li><li>Prototypage</li></ul>
+          </li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section process">
-    <div class="container">
-      <div class="process-heading">
-        <div><p class="section-label">06 / MÉTHODE</p><h2>Une approche <span>structurée</span></h2></div>
-      </div>
-      <div class="process-grid">
-        <div class="process-item"><span>01</span><h3>Comprendre</h3><p>Identifier le besoin réel et le contexte.</p></div>
-        <div class="process-item"><span>02</span><h3>Analyser</h3><p>Transformer le besoin en solution claire.</p></div>
-        <div class="process-item"><span>03</span><h3>Développer</h3><p>Construire une solution fonctionnelle et adaptée.</p></div>
-        <div class="process-item"><span>04</span><h3>Tester</h3><p>Vérifier la qualité et la fiabilité.</p></div>
-        <div class="process-item"><span>05</span><h3>Améliorer</h3><p>Faire évoluer la solution selon les retours.</p></div>
-      </div>
-    </div>
-  </section>
+    <!-- ============ MÉTHODE ============ -->
+    <section class="section" id="methode" aria-labelledby="methode-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="methode-title">Une approche structurée</h2>
+          <p class="section-head__lead">Cinq étapes, de la compréhension du besoin à l'amélioration continue.</p>
+        </div>
 
-  <section class="section journey" id="parcours">
-    <div class="container">
-      <div class="section-top">
-        <div><p class="section-label">07 / PARCOURS</p><h2>Formation & <span>expérience</span></h2></div>
-        <span class="section-number">07</span>
+        <ol class="steps" role="list">
+          <li class="step"><h3>Comprendre</h3><p>Identifier le besoin réel et le contexte.</p></li>
+          <li class="step"><h3>Analyser</h3><p>Transformer le besoin en solution claire.</p></li>
+          <li class="step"><h3>Développer</h3><p>Construire une solution fonctionnelle et adaptée.</p></li>
+          <li class="step"><h3>Tester</h3><p>Vérifier la qualité et la fiabilité.</p></li>
+          <li class="step"><h3>Améliorer</h3><p>Faire évoluer la solution selon les retours.</p></li>
+        </ol>
       </div>
+    </section>
 
-      <div class="timeline">
-        <article class="timeline-item">
-          <span class="timeline-marker"></span>
-          <div class="timeline-content">
-            <span>FORMATION</span>
+    <!-- ============ PARCOURS ============ -->
+    <section class="section section--tint" id="parcours" aria-labelledby="parcours-title">
+      <div class="wrap journey">
+        <div class="section-head">
+          <h2 id="parcours-title">Formation et expérience</h2>
+        </div>
+
+        <ol class="timeline" role="list">
+          <li class="timeline__item">
+            <p class="timeline__kind">Formation</p>
             <h3>Information Technology</h3>
-            <h4>Africa Nazarene University — Kenya</h4>
+            <p class="timeline__place">Africa Nazarene University, Kenya</p>
             <p>Formation orientée technologies de l'information, développement et systèmes numériques.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item">
-          <span class="timeline-marker"></span>
-          <div class="timeline-content">
-            <span>EXPÉRIENCE</span>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__kind">Expérience</p>
             <h3>Solutions numériques</h3>
-            <h4>Conception & développement</h4>
-            <p>Expérience dans la conception et le développement de solutions informatiques pour des besoins professionnels concrets.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item">
-          <span class="timeline-marker"></span>
-          <div class="timeline-content">
-            <span>APPRENTISSAGE</span>
+            <p class="timeline__place">Conception et développement</p>
+            <p>Conception et développement de solutions informatiques pour des besoins professionnels concrets.</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__kind">Apprentissage</p>
             <h3>Formation continue</h3>
-            <h4>Veille & apprentissage</h4>
-            <p>Développement continu des compétences à travers la pratique, la documentation et l'expérimentation.</p>
+            <p class="timeline__place">Veille et expérimentation</p>
+            <p>Développement continu des compétences par la pratique, la documentation et l'expérimentation.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ VISION ============ -->
+    <section class="vision" aria-labelledby="vision-title">
+      <div class="wrap vision__inner">
+        <h2 id="vision-title">La technologie doit créer un impact réel.</h2>
+        <p>
+          Les outils numériques peuvent aider les entreprises, les organisations et les communautés
+          à simplifier leurs opérations, mieux gérer leurs informations et ouvrir de nouvelles possibilités.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact">
+        <div class="contact__info">
+          <h2 id="contact-title">Construisons quelque chose d'utile.</h2>
+          <p class="lead">Un projet, une idée ou un besoin numérique ? Écrivez-moi directement.</p>
+
+          <div class="actions">
+            <a class="btn btn--primary" href="mailto:davintagawa@gmail.com">Envoyer un e-mail</a>
+            <a class="btn btn--ghost" href="https://wa.me/250736618871" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visually-hidden"> (nouvel onglet)</span></a>
           </div>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <section class="section vision">
-    <div class="container vision-content">
-      <p class="section-label">08 / VISION</p>
-      <h2>La technologie doit créer <span>un impact réel.</span></h2>
-      <p>
-        Les outils numériques peuvent aider les entreprises, les organisations et les communautés
-        à simplifier leurs opérations, mieux gérer leurs informations et créer de nouvelles possibilités.
-      </p>
-    </div>
-  </section>
-
-  <section class="section contact" id="contact">
-    <div class="container contact-grid">
-      <div class="contact-main">
-        <p class="section-label">09 / CONTACT</p>
-        <h2>Construisons quelque chose <span>d'utile.</span></h2>
-        <p>Un projet, une idée ou un besoin numérique ? Contactez-moi directement.</p>
-
-        <div class="hero-buttons">
-          <a class="btn primary" href="mailto:davintagawa@gmail.com">Envoyer un email</a>
-          <a class="btn outline" href="https://wa.me/250736618871" target="_blank" rel="noopener">WhatsApp</a>
+          <dl class="contact-list">
+            <div>
+              <dt>E-mail</dt>
+              <dd>
+                <a href="mailto:davintagawa@gmail.com">davintagawa@gmail.com</a>
+                <button class="copy-btn" type="button" data-copy="davintagawa@gmail.com">Copier</button>
+              </dd>
+            </div>
+            <div>
+              <dt>WhatsApp</dt>
+              <dd><a href="https://wa.me/250736618871" target="_blank" rel="noopener noreferrer">+250 736 618 871</a></dd>
+            </div>
+            <div>
+              <dt>Localisation</dt>
+              <dd>Bukavu, Sud-Kivu, RDC<br><span class="contact-list__time">Il est <time id="localTime">--:--</time> à Bukavu</span></dd>
+            </div>
+            <div>
+              <dt>GitHub</dt>
+              <!-- TODO : remplacer par l'URL de votre profil, par exemple https://github.com/votre-identifiant -->
+              <dd><a href="https://github.com/" target="_blank" rel="noopener noreferrer">Voir mes projets<span class="visually-hidden"> (nouvel onglet)</span></a></dd>
+            </div>
+          </dl>
         </div>
+
+        <form class="contact-form" id="contactForm" data-email="davintagawa@gmail.com" novalidate>
+          <h3>Décrire votre besoin</h3>
+
+          <div class="field">
+            <label for="f-name">Nom</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="80">
+            <p class="field__error" id="f-name-err" hidden>Indiquez votre nom.</p>
+          </div>
+
+          <div class="field">
+            <label for="f-type">Type de projet</label>
+            <select id="f-type" name="type">
+              <option>Site ou application web</option>
+              <option>Application mobile</option>
+              <option>Base de données ou système d'information</option>
+              <option>Automatisation</option>
+              <option>Autre</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" name="message" rows="5" required maxlength="1500"></textarea>
+            <p class="field__error" id="f-message-err" hidden>Décrivez brièvement votre besoin.</p>
+          </div>
+
+          <button class="btn btn--primary" type="submit">Préparer mon e-mail</button>
+          <p class="form-hint">Votre application de messagerie s'ouvre avec le message prérempli. Rien n'est envoyé tant que vous ne validez pas.</p>
+        </form>
       </div>
+    </section>
+  </main>
 
-      <div class="contact-details">
-        <a class="contact-item" href="mailto:davintagawa@gmail.com">
-          <span>Email</span><strong>davintagawa@gmail.com</strong>
-        </a>
-        <a class="contact-item" href="https://wa.me/250736618871" target="_blank" rel="noopener">
-          <span>WhatsApp</span><strong>+250 736 618 871</strong>
-        </a>
-        <div class="contact-item">
-          <span>Localisation</span><strong>Bukavu, Sud-Kivu — RDC</strong>
-        </div>
-        <a class="contact-item" href="https://github.com/" target="_blank" rel="noopener">
-          <span>GitHub</span><strong>Voir mes projets</strong>
-        </a>
-      </div>
+  <!-- ============ PIED DE PAGE ============ -->
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>© <span id="year">2026</span> Ntagawa David. Tous droits réservés.</p>
+      <nav aria-label="Liens de pied de page">
+        <a href="#top">Haut de page</a>
+        <a href="#technologies">Technologies</a>
+        <a href="#contact">Contact</a>
+        <!-- TODO : remplacer par l'URL de votre profil GitHub -->
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (nouvel onglet)</span></a>
+      </nav>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer>
-  <div class="container footer-grid">
-    <p>© 2026 Ntagawa David. Tous droits réservés.</p>
-    <div class="footer-links">
-      <a href="#accueil">Accueil</a>
-      <a href="#technologies">Technologies</a>
-      <a href="#contact">Contact</a>
-      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-    </div>
-    <p class="footer-copy">Informaticien • Développeur • Innovation numérique</p>
-  </div>
-</footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
